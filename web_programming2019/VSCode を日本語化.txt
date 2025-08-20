@@ -1,0 +1,67 @@
+https://apps.microsoft.com/detail/xp9khm4bk9fz7q?launch=true&mode=full&hl=ja-jp&gl=jp&ocid=bingwebsearch
+VSCodeダウンロード先
+
+Visual Studio Code（VSCode）を日本語化するのはとても簡単で、以下の手順で完了します 💡
+
+🛠 日本語化のステップ
+拡張機能をインストールする
+
+VSCodeを起動し、左側の「拡張機能」アイコン（四角が4つ組み合わさったマーク）をクリック
+
+検索バーに「Japanese Language Pack for Visual Studio Code」と入力
+
+表示された拡張機能を選び、「インストール」をクリック
+
+言語を切り替える
+
+インストール後、画面右下に「Change Language and Restart」が表示されるのでクリック
+
+VSCodeが再起動され、日本語表示に切り替わります
+
+手動で切り替える場合
+
+Ctrl + Shift + P（Macは Cmd + Shift + P）でコマンドパレットを開く
+
+「Configure Display Language」と入力し、「ja」を選択
+
+再起動すると日本語化が反映されます
+-----------------------
+
+
+・マウスホイールでエディターを拡大する方法
+
+左下の歯車
+
+設定
+
+設定の検索バーに
+
+Editor: Mouse Wheel Zoom
+を検索
+チェックボックスにチェックを入れる
+
+-----------------------------
+✅ 手順：lang="ja" に変更する方法
+設定ファイル（settings.json）を開く
+
+Ctrl + Shift + P
+でコマンドパレットを開く
+
+「基本設定：ユーザー設定を開く (JSON)」を選択
+
+以下のコードを追加する
+
+json
+"emmet.variables": {
+  "lang": "ja"
+}
+
+
+🔍 追加する場所は、JSONの最後の } の直前。カンマの付け忘れに注意！
+
+保存して確認 HTMLファイルで ! → Tab を押すと、<html lang="ja"> が自動生成されるようになります。
+---------------------
+
+LIVE PREVIEW
+のインストール
+

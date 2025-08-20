@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="港区のお散歩情報。素敵な場所をたくさん紹介しています。">
+    <meta name="keywords" content="港区,お散歩,東京タワー,レインボーブリッジ">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>お問い合わせフォーム</title>
+    <script>
+        function sendForm() {
+            hen_sei = document.forms[0].elements[0].value;
+            hen_mei = document.forms[0].elements[1].value;
+            hen_mail = document.forms[0].elements[2].value;
+            // alert(hen_sei + hen_mei + hen_mail);
+            hen_seibetsu = "未設定";
+            if (document.forms[0].elements[3].checked == true) {
+                hen_seibetsu = "男性";
+            } else if (document.forms[0].elements[4].checked) {
+                hen_seibetsu = "女性";
+            }
+            // alert(hen_seibetsu);
+
+            function ch_Name(va) {
+                if (va == "gourmet") {
+                    return "グルメ"
+                };
+                if (va == "park") {
+                    return "テーマパーク"
+                };
+                if (va == "biyou") {
+                    return "美容"
+                };
+                if (va == "shopping") {
+                    return "ショッピング"
+                };
+                if (va == "walk") {
+                    return "散歩"
+                };
+            }
+            
+            let hen_hyouji = "";
+            for (i = 5; i <= 9; i++) {
+                if (document.forms[0].elements[i].checked == true) {
+                    hen_hyouji = hen_hyouji + ch_Name(document.forms[0].elements[i].value) + ",";
+                }
+            }
+           
+            //趣味の選択結果の最後に","がつく場合、" "にする
+            if (hen_hyouji.endsWith(",")) {
+                hen_hyouji = hen_hyouji.slice(0, -1) + " ";
+            }
+            // ご意見・ご感想フォーム
+            hen_kansou = document.forms[0].elements[10].value;
+
+            // document.write("姓名：", hen_sei + hen_mei, "<br>メールアドレス：", hen_mail, "<br>性別：", hen_seibetsu, "<br>興味のあること：", hen_hyouji, "<br>ご意見・ご感想：<br>", hen_kansou);
+            let newWin=window.open("","newWin","width=400", "height=400");
+            newWin.document.write("＊下記の内容で受け付けました＊<br>姓名",hen_sei + hen_mei,"<br>メールアドレス：", hen_mail, "<br>性別：", hen_seibetsu, "<br>興味：", hen_hyouji, "<br>ご意見・ご感想：<br>", hen_kansou);
+        }
+        
+    </script>
+</head>
+
+<body>
+    <div id="page">
+        <header>
+            <h1>お散歩しませんか？</h1>
+        </header>
+        <article>
+            <h2>当サイトへのご意見、ご感想をお寄せください。</h2>
+            <h3>メールアドレスをお書きいただいた方にはお得な情報をお送りいたします。</h3>
+
+            <form>
+                <p>
+                    姓<input type="text" name="sei" size="10">
+                    名<input type="text" name="mei" size="10"><br>
+                    メールアドレス<input type="text" name="mail" size="30">
+                </p>
+
+                <p>
+                    性別<br>
+                    <!-- nameを同一にすると排他的(交互にボタン表示)になる -->
+                    男性<input type="radio" name="ra" value="m">
+                    女性<input type="radio" name="ra" value="f">
+                </p>
+
+                <p>
+                    興味のあること<br>
+                    <!-- 以下、elements[5]～elements[9] -->
+                    <input type="checkbox" value="gourmet">グルメ<br>
+                    <input type="checkbox" value="park">テーマパーク<br>
+                    <input type="checkbox" value="biyou">美容<br>
+                    <input type="checkbox" value="shopping">ショッピング<br>
+                    <input type="checkbox" value="walk">散歩
+                </p>
+                <p>
+                    ご意見ご感想<br>
+                    <textarea name="kansou" cols="60" rows="4"></textarea>
+                </p>
+
+                <p>
+                    <input type="submit" value="送信" onclick="sendForm()">
+                    <input type="reset" value="キャンセル">
+                </p>
+            </form>
+            <p class="side">
+                <a href="index.html">BACK</a>
+            </p>
+        </article>
+        <nav>
+            <ul>
+                <li class="select">HOME</li>
+                <li><a href="bridge.html">レインボーブリッジ</a></li>
+                <li><a href="tower.html">東京タワー</a></li>
+                <li><a href="schedule.html">イベント情報</a></li>
+                <li><a href="form.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
+        <footer><small>
+                copyright(C) 2012- 散歩girl, All rights reserved.
+            </small></flooter>
+    </div>
+</body>
+
+</html>

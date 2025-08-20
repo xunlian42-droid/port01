@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* h2 要素に対するスタイル定義 */
+    h2 {
+        color: rgb(255, 0, 0); /* 文字色を赤に設定 */
+        font-size:large;
+        font-style: italic;
+    }
+    /*<p class="red">*/
+    /*<h2 class="red>"*/
+    .red{
+        color:red;
+    }
+    p.blue{
+        color:blue;
+    }
+    </style>
+</head>
+<body>
+    <h2>商品ページ</h2>
+    <ul>
+        <li>商品一覧</li>
+                <ol>
+                    <li>チョコレート</li>
+                    <li>ポテトチップス</li>
+                    <li>クッキー</li>
+                </ol>
+        <li>顧客一覧</li>
+        <li>売上一覧</li>
+    </ul>
+
+    <p class="blue">
+        商品一覧を表示します。
+    </p>
+    <table border="5">
+        <caption style="color:red;">商品一覧</caption>
+        <tr>
+            <th>商　品　名</th>
+            <th>価格(円)</th>
+        </tr>
+        <tr>
+            <td>チョコレート</td>
+            <td>220</td>
+        </tr>
+        <tr>
+            <td>ポテトチップス</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>クッキー</td>
+            <td>150</td>
+        </tr>
+    </table>
+</body>
+</html>
