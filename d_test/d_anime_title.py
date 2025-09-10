@@ -14,8 +14,8 @@ options.add_argument("--window-size=1200,3000")  # ← 追加
 # options.add_argument("--headless")
 driver = webdriver.Chrome(options=options)
 
-# 対象URL（や行ページ）
-url = "https://animestore.docomo.ne.jp/animestore/c_all_pc?initialCollectionKey=8&vodTypeList=svod_tvod"
+# 対象URL（あ行ページ）
+url = "https://animestore.docomo.ne.jp/animestore/c_all_pc?initialCollectionKey=1&vodTypeList=svod_tvod"
 driver.get(url)
 
 # 出力用ディレクトリ
@@ -23,11 +23,11 @@ os.makedirs("output", exist_ok=True)
 
 # 五十音タブの data-value と対応する仮名
 kana_map = {
-    "0": "や",
+    "0": "あ",
     "1": "い",
-    "2": "ゆ",
+    "2": "う",
     "3": "え",
-    "4": "よ"
+    "4": "お"
 }
 
 # 結果格納用
@@ -96,13 +96,13 @@ for data_value, kana in kana_map.items():
 driver.quit()
 
 
-for kana in ["や", "い", "ゆ", "え", "よ"]:
+for kana in ["あ", "い", "う", "え", "お"]:
     count = len(groups[kana])  # タイトル数を取得
     html = f"""<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>や行の作品一覧</title>
+    <title>あ行の作品一覧</title>
     <style>
         body {{
             font-family: 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
@@ -154,4 +154,4 @@ for kana in ["や", "い", "ゆ", "え", "よ"]:
     with open(f"output/{kana}.html", "w", encoding="utf-8") as f:
         f.write(html)
 
-print("や〜よの作品一覧HTMLを output フォルダに生成しました。")
+print("あ〜おの作品一覧HTMLを output フォルダに生成しました。")
