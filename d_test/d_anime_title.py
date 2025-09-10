@@ -14,8 +14,8 @@ options.add_argument("--window-size=1200,3000")  # ← 追加
 # options.add_argument("--headless")
 driver = webdriver.Chrome(options=options)
 
-# 対象URL（は行ページ）
-url = "https://animestore.docomo.ne.jp/animestore/c_all_pc?initialCollectionKey=6&vodTypeList=svod_tvod"
+# 対象URL（や行ページ）
+url = "https://animestore.docomo.ne.jp/animestore/c_all_pc?initialCollectionKey=8&vodTypeList=svod_tvod"
 driver.get(url)
 
 # 出力用ディレクトリ
@@ -23,11 +23,11 @@ os.makedirs("output", exist_ok=True)
 
 # 五十音タブの data-value と対応する仮名
 kana_map = {
-    "0": "は",
-    "1": "ひ",
-    "2": "ふ",
-    "3": "へ",
-    "4": "ほ"
+    "0": "や",
+    "1": "い",
+    "2": "ゆ",
+    "3": "え",
+    "4": "よ"
 }
 
 # 結果格納用
@@ -40,13 +40,18 @@ for data_value, kana in kana_map.items():
         driver = webdriver.Chrome(options=options)
         driver.get(url)
 
-        # タブをクリック
-        tab = WebDriverWait(driver, 10).until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, f"li[data-value='{data_value}']"))
-        )
+        # タブ要素が存在するか確認
+        try:
+            tab = WebDriverWait(driver, 20).until(
+                EC.element_to_be_clickable((By.CSS_SELECTOR, f"li[data-value='{data_value}']"))
+            )
+        except Exception as e:
+            print(f"{kana}行タブが見つかりません: {e}")
+            driver.quit()
+            continue
+
         tab.click()
         print(f"{kana}行 tab class: {tab.get_attribute('class')}")
-
         time.sleep(5)  # タブ切り替え待機
 
         # ★ listContainerを少しずつスクロールして全件読み込む
@@ -91,13 +96,13 @@ for data_value, kana in kana_map.items():
 driver.quit()
 
 
-for kana in ["は", "ひ", "ふ", "へ", "ほ"]:
+for kana in ["や", "い", "ゆ", "え", "よ"]:
     count = len(groups[kana])  # タイトル数を取得
     html = f"""<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>は行の作品一覧</title>
+    <title>や行の作品一覧</title>
     <style>
         body {{
             font-family: 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
@@ -149,4 +154,4 @@ for kana in ["は", "ひ", "ふ", "へ", "ほ"]:
     with open(f"output/{kana}.html", "w", encoding="utf-8") as f:
         f.write(html)
 
-print("は〜ほの作品一覧HTMLを output フォルダに生成しました。")
+print("や〜よの作品一覧HTMLを output フォルダに生成しました。")
