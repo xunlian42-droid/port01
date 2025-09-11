@@ -1,20 +1,18 @@
 from bs4 import BeautifulSoup
 
 input_files = [
-    {'file': 'C:/Users/0602JP/Desktop/port/output/dani_06_KA.html', 'tag': 'か'},
-    {'file': 'C:/Users/0602JP/Desktop/port/output/dani_07_KI.html', 'tag': 'き'},
-    {'file': 'C:/Users/0602JP/Desktop/port/output/dani_08_KU.html', 'tag': 'く'},
-    {'file': 'C:/Users/0602JP/Desktop/port/output/dani_09_KE.html', 'tag': 'け'},
-    {'file': 'C:/Users/0602JP/Desktop/port/output/dani_10_KO.html', 'tag': 'こ'},
+    {'file': 'C:/Users/0602JP/Desktop/port/output/dani_46_WA.html', 'tag': 'わ'},
+    {'file': 'C:/Users/0602JP/Desktop/port/output/dani_47_WO.html', 'tag': 'を'},
+    {'file': 'C:/Users/0602JP/Desktop/port/output/dani_48_N.html', 'tag': 'ん'},
 ]
 
-output_file = 'ka_gyo_comparison.html'
+output_file = '020_wa_gyo_comparison.html'
 
 html_header = '''<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>カ行の作品比較</title>
+  <title>ワ行の作品比較</title>
   <style>
     body { font-family: sans-serif; padding: 20px; background: #f9f9f9; }
     table { width: 100%; border-collapse: collapse; background: #fff; }
@@ -92,13 +90,11 @@ html_header = '''<!DOCTYPE html>
   </style>
 </head>
 <body>
-  <h1>📺 カ行の作品比較</h1>
+  <h1>📺 ワ行の作品比較</h1>
   <div class="filter-bar">
-    <button class="filter-btn" data-filter="か">か</button>
-    <button class="filter-btn" data-filter="き">き</button>
-    <button class="filter-btn" data-filter="く">く</button>
-    <button class="filter-btn" data-filter="け">け</button>
-    <button class="filter-btn" data-filter="こ">こ</button>
+    <button class="filter-btn" data-filter="わ">わ</button>
+    <button class="filter-btn" data-filter="を">を</button>
+    <button class="filter-btn" data-filter="ん">ん</button>
     <button class="filter-btn reset" data-filter="all">すべて表示</button>
   </div>
   <table>

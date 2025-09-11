@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ヤ行の作品比較</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f9f9f9; }
+    table { width: 100%; border-collapse: collapse; background: #fff; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
+    th { background-color: #e0e0e0; }
+    tr:nth-child(even) { background-color: #f2f2f2; }
+    .no-link { color: gray; }
+    .custom-tooltip {
+      display: none;
+      position: absolute;
+      background: #fffbe7;
+      color: #333;
+      border: 1px solid #ffd700;
+      border-radius: 6px;
+      padding: 8px 16px;
+      font-size: 1em;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      pointer-events: auto;
+      white-space: nowrap;
+      min-width: 200px;
+    }
+    .tooltip-tag {
+      display: inline-block;
+      background: #ffd700;
+      color: #333;
+      border-radius: 4px;
+      padding: 2px 10px;
+      margin: 2px 4px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .tooltip-tag-remove {
+      color: #f00;
+      margin-left: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .tooltip-tag-input {
+      margin-top: 8px;
+      width: 120px;
+      font-size: 1em;
+      padding: 2px 6px;
+    }
+    .tooltip-tag-add-btn {
+      margin-left: 4px;
+      padding: 2px 8px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .filter-bar {
+      margin-bottom: 16px;
+    }
+    .filter-btn {
+      display: inline-block;
+      background: #ffd700;
+      color: #333;
+      border-radius: 4px;
+      padding: 4px 14px;
+      margin-right: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      transition: background 0.2s;
+    }
+    .filter-btn.active {
+      background: #ff9800;
+      color: #fff;
+    }
+    .filter-btn.reset {
+      background: #e0e0e0;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>📺 ヤ行の作品比較</h1>
+  <div class="filter-bar">
+    <button class="filter-btn" data-filter="や">や</button>
+    <button class="filter-btn" data-filter="ゆ">ゆ</button>
+    <button class="filter-btn" data-filter="よ">よ</button>
+    <button class="filter-btn reset" data-filter="all">すべて表示</button>
+  </div>
+  <table>
+    <tr>
+      <th>配信あり：◎</th>
+      <th>配信なし：✖</th>
+    </tr>
+  </table>
+  <table>
+    <thead>
+      <tr>
+        <th>作品タイトル</th>
+        <th>dアニメストア</th>
+        <th>DMM TV</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">「『ヤマトよ永遠に REBEL3199』 第三章 群青のアステロイド」配信限定音声特典付き</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27934" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">『ヤマトよ永遠に REBEL3199』 第一章 黒の侵略</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27252" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">『ヤマトよ永遠に REBEL3199』 第三章 群青のアステロイド</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27935" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">『ヤマトよ永遠に REBEL3199』 第二章 赤日の出撃</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27520" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">やがて君になる</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22402" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">やくならマグカップも</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24525" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">やくならマグカップも　二番窯</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24982" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">やさいのようせい N.Y. SALAD</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24894" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">やさいのようせい The Movie</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24895" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">やたらやらしい深見くん【オンエア版】</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27761" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">やっぱり海が好き</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=26117" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">やなせたかしメルヘン劇場</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24877" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">やはり俺の青春ラブコメはまちがっている。</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22967" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">やはり俺の青春ラブコメはまちがっている。完</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24973" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">やはり俺の青春ラブコメはまちがっている。続</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22968" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">やり直し令嬢は竜帝陛下を攻略中</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27309" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">やわらか戦車</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23727" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">やんやんマチコ</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21867" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">タイムボカンシリーズ　ヤッターマン</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21273" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">タイムボカンシリーズ　ヤットデタマン</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21480" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ヤッターマン</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=10643" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ヤマノススメ</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=10738" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ヤマノススメ Next Summit</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25823" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ヤマノススメ おもいでプレゼント</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22278" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ヤマノススメ サードシーズン</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22245" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ヤマノススメ セカンドシーズン</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20483" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ヤミと帽子と本の旅人</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27340" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ヤリチン☆ビッチ部</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=26943" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ヤンキーハムスター</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23776" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ヤンキーハムスター シーズン2</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24663" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ヤンキーハムスター シーズン2.5</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24949" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ヤンキーハムスター シーズン3</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25460" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ヤンキーハムスター シーズン4</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=26552" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ヤンキー烈風隊</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=26239" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ヤング ブラック･ジャック</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20386" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">八十亀ちゃんかんさつにっき 4さつめ</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25440" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">八十亀ちゃんかんさつにっき dアニメストアスペシャルVer.</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22712" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">八十亀ちゃんかんさつにっき ２さつめ DELUXEインタビューVer.</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23170" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">八十亀ちゃんかんさつにっき ３さつめ</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24406" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">夜ノヤッターマン</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=11615" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">山ねずみロッキーチャック</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=10987" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">山田くんと7人の魔女</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21088" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">山田くんとLv999の恋をする</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=26298" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">約束のネバーランド</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23055" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">約束のネバーランド Season 2</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25157" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">薬師寺涼子の怪奇事件簿</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20428" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">闇の末裔</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23142" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">闇芝居</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20274" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">闇芝居 七期</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22895" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">闇芝居 三期</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20964" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">闇芝居 九期</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25055" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">闇芝居 二期</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20275" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">闇芝居 五期</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21731" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">闇芝居 八期</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24444" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">闇芝居 六期</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22270" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">闇芝居 十一期</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=26507" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">闇芝居 十三期</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27174" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">闇芝居 十二期</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=26801" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">闇芝居 十五期</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=28070" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">闇芝居 十四期</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27566" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">闇芝居 十期</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25373" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">闇芝居 四期</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21436" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="や" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ＹＡＴ安心！宇宙旅行</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=26804" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">UG★アルティメットガール</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=10964" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">UniteUp!</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=26064" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">UniteUp! -Uni:Birth-</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27462" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">YURIKA ENDO FINAL LIVE-Emotional Daybreak-</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22392" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">「幽☆遊☆白書」　霊界探偵編/暗黒武術会編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21253" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">「幽☆遊☆白書」　魔界の扉編/魔界トーナメント編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21487" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ゆうとくんがいく</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=11304" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ゆとりちゃん</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=10218" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ゆびさきと恋々</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=26770" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ゆびさきと恋々（字幕版）</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=26771" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ゆめりあ</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23637" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ゆゆ式</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23210" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ゆゆ式OVA　「困らせたり、困らされたり」</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23211" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ゆらぎ荘の幽奈さん</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22267" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ゆるかわメルちゃん</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27987" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ゆるめいつ</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20078" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ゆるめいつ 3でぃ</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=10629" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ゆるめいつ は？</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20079" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ゆるゆり</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=10406" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ゆるゆり さん☆ハイ！</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20367" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ゆるゆり なちゅやちゅみ！+　+1</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20305" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ゆるゆり なちゅやちゅみ！+　+2</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20347" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ゆるゆり♪♪</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=10513" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ゆるゆり　なちゅやちゅみ！</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20085" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ゆるゆり、</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24711" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ゆるキャン△</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21928" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ゆるキャン△ SEASON２</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24435" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ゆるキャン△ SEASON３</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27031" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ミュージカル『憂国のモリアーティ』Op.1</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24955" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ミュージカル『憂国のモリアーティ』Op.2 -大英帝国の醜聞-</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24956" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ミュージカル『憂国のモリアーティ』Op.3 -ホワイトチャペルの亡霊-</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25953" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ミュージカル『憂国のモリアーティ』Op.4 -犯人は二人-</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=26503" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ミュージカル『憂国のモリアーティ』Op.5 -最後の事件-</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27585" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ミュージカル『憂国のモリアーティ』Recollection（スペシャル座談会）</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27724" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ユア・フォルマ</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27889" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ユニコ</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24087" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ユニコ 魔法の島へ</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24088" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ユニコーン・ウォーズ</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27938" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ユリシーズ ジャンヌ・ダルクと錬金の騎士</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22424" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ユリ熊嵐</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=11607" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ユーリ!!! on CONCERT</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=26273" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ユーリ!!! on ICE</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21186" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ユーレイデコ</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25600" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">円盤皇女ワるきゅーレ</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=10168" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">円盤皇女ワるきゅーレ 星霊節の花嫁</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=10170" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">円盤皇女ワるきゅーレSPECIAL ｢七転八倒 花嫁修行｣</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=10296" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">円盤皇女ワるきゅーレ　十二月の夜想曲</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=10169" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">円盤皇女ワるきゅーレ　時と夢と銀河の宴</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=10171" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">劇場版 幽☆遊☆白書</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24825" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">劇場版　遊☆戯☆王　～超融合！時空（とき）を越えた絆～</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24716" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">劇場版『遊☆戯☆王 THE DARK SIDE OF DIMENSIONS』</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23021" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">勇気爆発バーンブレイバーン</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=26820" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">勇者、辞めます</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25340" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">勇者が死んだ！</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=26328" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">勇者になれなかった俺はしぶしぶ就職を決意しました。</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=11336" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">勇者パーティーを追放されたビーストテイマー、最強種の猫耳少女と出会う</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25773" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">勇者パーティーを追放された白魔導師、Sランク冒険者に拾われる ～この白魔導師が規格外すぎる～</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=28010" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">勇者ライディーン</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=10378" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">勇者王ガオガイガー</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21991" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">勇者王ガオガイガーFINAL</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22358" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">夢のクレヨン王国</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25719" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">夢ふくらむあこがれの街</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25753" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">夢喰いメリー</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23622" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">夢戦士ウイングマン</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=26169" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">夢王国と眠れる100人の王子様</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22266" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">夢見る男子は現実主義者</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=26970" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">幽☆遊☆白書 「TWO SHOTS」「のるかそるか」</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22909" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">幽☆遊☆白書 冥界死闘篇 炎の絆</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22962" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">憂国のモリアーティ</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24304" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">指先から本気の熱情-幼なじみは消防士-【オンエア版】</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22830" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">指先から本気の熱情2-恋人は消防士-【オンエア版】</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24777" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">映画『ゆるキャン△』</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=26704" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">結城友奈は勇者である</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=11512" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">結城友奈は勇者である -大満開の章-</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25104" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">結城友奈は勇者である -鷲尾須美の章-／-勇者の章-</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22661" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">結城友奈は勇者である　ちゅるっと</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24588" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">舞台「幽☆遊☆白書」</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24179" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">舞台「憂国のモリアーティ」</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24860" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">遊☆戯☆王 デュエルモンスターズ</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21682" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">遊☆戯☆王5D's</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22398" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">遊☆戯☆王ARC-Ⅴ</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23022" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">遊☆戯☆王SEVENS　ゴーハ6兄弟編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24833" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">遊☆戯☆王SEVENS　ゴーハ社員編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24834" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">遊☆戯☆王SEVENS　ゴーハ６小編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23865" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">遊☆戯☆王SEVENS　チームバトルロイヤル編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23866" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">遊☆戯☆王SEVENS　デュエルの王編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24835" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">遊☆戯☆王SEVENS　マキシマム編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23864" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">遊☆戯☆王SEVENS　ラッシュデュエル誕生編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23760" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">遊☆戯☆王VRAINS　Ai編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23869" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">遊☆戯☆王VRAINS　イグニス編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23868" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">遊☆戯☆王VRAINS　ハノイの騎士編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23867" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">遊☆戯☆王ZEXAL （ドクター・フェイカー編）</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23870" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">遊☆戯☆王ZEXALⅡ（バリアン編）</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23871" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">遊☆戯☆王ゴーラッシュ！！</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25448" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">遊☆戯☆王デュエルモンスターズGX</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21963" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">雪の女王 ゲルダの伝説</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24980" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ＴＶアニメ版 ゆるめいつ ３でぃ PLUS</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=11339" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ゆ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ＵＦＯロボ　グレンダイザー対グレートマジンガー</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21920" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">4人はそれぞれウソをつく</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25785" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">Yoshino Nanjo Live Tour 2017 <・R・i・n・g・></span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22042" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">よあそびぐらしっ！【オンエア版】</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27178" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ようこそ実力至上主義の教室へ</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21651" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ようこそ実力至上主義の教室へ 2nd Season</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25650" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ようこそ実力至上主義の教室へ 3rd Season</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=26744" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">よなよなペンギン</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21884" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">よばれてとびでて！アクビちゃん</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20033" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">よふかしのうた</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25692" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">よろしくメカドック</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=10740" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">よんでますよ、アザゼルさん。</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=10939" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">よんでますよ、アザゼルさん。Z</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=11423" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ヨウゼン</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=28136" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ヨスガノソラ</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=10531" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ヨルムンガンド</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22323" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ヨルムンガンド PERFECT ORDER</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22324" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">余命彼氏vol.1～限りある時間（とき）～</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25291" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">余命彼氏vol.2～限りある時間（とき）～</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25292" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">余命彼氏vol.3～幼き日の約束～</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25293" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">余命彼氏vol.4～幼き日の約束～</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25294" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">余命彼氏vol.5～紡ぎ出す季節～</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25295" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">余命彼氏vol.6～紡ぎ出す季節～</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25296" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">余命彼氏vol.7～降り注ぐ追憶～</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25297" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">余命彼氏vol.8～降り注ぐ追憶～</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25298" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">劇場版 幼女戦記</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23559" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">劇場版 弱虫ペダル</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23458" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">吉永さん家のガーゴイル</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=10976" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">四十五番目の話</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24981" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">四畳半神話大系</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=11201" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">夜のクラゲは泳げない</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27002" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">夜は短し歩けよ乙女</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22148" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">夜明け告げるルーのうた</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22128" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">夜桜さんちの大作戦</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27024" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">夜桜四重奏 -ハナノウタ-</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=11022" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">夜桜四重奏 ～ツキニナク～</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=28015" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">夜桜四重奏 ～ホシノウミ～</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=28014" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">妖怪アパートの幽雅な日常</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21655" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">妖怪ウォッチ</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=11501" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">妖怪ウォッチ シャドウサイド</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22109" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">妖怪ウォッチ♪</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24668" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">妖怪ウォッチ！</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22698" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">妖怪人間ベム</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24041" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">妖怪人間ベム -HUMANOID MONSTER BEM-</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24042" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">妖怪学園Y ～Nとの遭遇～（妖怪ウォッチJam）</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23194" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">妖怪学校の先生はじめました！</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27287" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">妖精フローレンス</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25556" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">妖精姫レーン</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=11149" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">幼女戦記</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21543" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">幼女戦記　閑話『砂漠のパスタ大作戦』</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24911" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">幼女社長</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24441" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">幼女社長R</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=26449" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">弱虫ペダル</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=11443" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">弱虫ペダル GLORY LINE</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21947" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">弱虫ペダル LIMIT BREAK</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25811" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">弱虫ペダル NEW GENERATION</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21360" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">弱虫ペダル Re：GENERATION</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23453" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">弱虫ペダル SPARE BIKE</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23452" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">弱虫ペダル ＧＲＡＮＤＥ ＲＯＡＤ（グランロード）</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20099" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">弱虫ペダル Ｒｅ：ＲＩＤＥ</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20124" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">弱虫ペダル Ｒｅ：ＲＯＡＤ</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23716" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">映画 妖怪ウォッチ FOREVER FRIENDS</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24352" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">映画 妖怪ウォッチ エンマ大王と5つの物語だニャン！</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24261" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">映画 妖怪ウォッチ シャドウサイド 鬼王の復活</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24263" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">映画 妖怪ウォッチ 空飛ぶクジラとダブル世界の大冒険だニャン！</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24262" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">映画 妖怪ウォッチ 誕生の秘密だニャン！</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24260" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">映画 妖怪学園Y 猫はHEROになれるか</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24960" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">舞台『弱虫ペダル』</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20352" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">舞台『弱虫ペダル』IRREGULAR～2つの頂上～</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21075" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">舞台『弱虫ペダル』SPARE BIKE篇～Heroes!!～</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25277" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">舞台『弱虫ペダル』THE DAY 1</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27130" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">舞台『弱虫ペダル』The Cadence！</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=26420" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">舞台『弱虫ペダル』インターハイ篇 The First Result</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20353" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">舞台『弱虫ペダル』インターハイ篇 The Second Order</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20355" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">舞台『弱虫ペダル』インターハイ篇 The WINNER</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20361" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">舞台『弱虫ペダル』新インターハイ篇FINAL～POWER OF BIKE～</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25276" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">舞台『弱虫ペダル』新インターハイ篇～スタートライン～</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22047" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">舞台『弱虫ペダル』新インターハイ篇～ヒートアップ～</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23282" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">舞台『弱虫ペダル』新インターハイ篇～制・限・解・除（リミットブレイカー）～</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23284" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">舞台『弱虫ペダル』新インターハイ篇～箱根学園王者復格（ザ・キングダム）～</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23283" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">舞台『弱虫ペダル』箱根学園篇～眠れる直線鬼～</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20354" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">舞台『弱虫ペダル』箱根学園篇～野獣覚醒～</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20430" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">舞台『弱虫ペダル』～箱根学園（ハコガク）新世代、始動～</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21558" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">舞台『弱虫ペダル』～総北新世代、始動～</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21079" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">酔いどれ声優放浪記　せいべろ【新橋篇】</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24748" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">鎧伝サムライトルーパー</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=11285" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">鎧伝サムライトルーパー MESSAGE</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=28225" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">鎧伝サムライトルーパー 輝煌帝伝説</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=28224" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">鎧伝サムライトルーパー外伝</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=28223" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">齢5000年の草食ドラゴン、いわれなき邪竜認定</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25926" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="よ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">齢5000年の草食ドラゴン、いわれなき邪竜認定 season2</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27302" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+
+    </tbody>
+  </table>
+  <a href="index.html">トップページに戻る</a>
+  <div id="custom-tooltip" class="custom-tooltip"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // フィルタ機能
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      filterBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          if(btn.dataset.filter !== "all") btn.classList.add('active');
+          const filter = btn.getAttribute('data-filter');
+          document.querySelectorAll('tbody tr').forEach(function(row) {
+            const titleSpan = row.querySelector('.title-span[data-tag]');
+            if (!titleSpan) return;
+            const tag = titleSpan.getAttribute('data-tag');
+            if (filter === 'all' || tag === filter) {
+              row.style.display = '';
+            } else {
+              row.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // ポップアップの表示・非表示制御用フラグ
+      let tooltipHover = false;
+
+      // タイトルクリックでポップアップ
+      const tooltip = document.getElementById('custom-tooltip');
+      let lastTarget = null;
+      document.querySelectorAll('td > span[data-tag].title-span').forEach(function(span) {
+        span.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const tag = span.getAttribute('data-tag');
+          let tags = [];
+          try {
+            tags = JSON.parse(span.getAttribute('data-tags') || '[]');
+          } catch { tags = []; }
+          if (lastTarget === span && tooltip.style.display === 'block') {
+            tooltip.style.display = 'none';
+            lastTarget = null;
+            return;
+          }
+          // 固定タグ（五十音）と追加タグを分けて表示
+          let tagsHtml = '<span class="tooltip-tag" data-fixed="1" data-tag="' + tag + '">' + tag + '</span>';
+          tagsHtml += tags.map(function(t, idx) {
+            return '<span class="tooltip-tag">' + t +
+              '<span class="tooltip-tag-remove" data-idx="' + idx + '">×</span></span>';
+          }).join('');
+          tagsHtml += '<div><input class="tooltip-tag-input" type="text" placeholder="タグを追加">' +
+                      '<button class="tooltip-tag-add-btn">追加</button></div>';
+          tooltip.innerHTML = tagsHtml;
+          const rect = span.getBoundingClientRect();
+          tooltip.style.left = (window.scrollX + rect.left) + 'px';
+          tooltip.style.top = (window.scrollY + rect.bottom + 4) + 'px';
+          tooltip.style.display = 'block';
+          lastTarget = span;
+
+          // 入力欄やポップアップ上での操作で消えないように
+          tooltip.onmouseenter = function() { tooltipHover = true; };
+          tooltip.onmouseleave = function() { tooltipHover = false; setTimeout(function(){
+            if(!tooltipHover) { tooltip.style.display = 'none'; lastTarget = null; }
+          }, 100); };
+          // 入力欄でのクリック・入力時も消えないように
+          const input = tooltip.querySelector('.tooltip-tag-input');
+          if (input) {
+            input.addEventListener('mousedown', function(ev) { ev.stopPropagation(); });
+            input.addEventListener('click', function(ev) { ev.stopPropagation(); });
+            input.addEventListener('keydown', function(ev) { ev.stopPropagation(); });
+          }
+
+          // 固定タグクリックでフィルタ
+          tooltip.querySelectorAll('.tooltip-tag[data-fixed="1"]').forEach(function(btn) {
+            btn.onclick = function(ev) {
+              ev.stopPropagation();
+              const tag = btn.getAttribute('data-tag');
+              document.querySelector('.filter-btn[data-filter="' + tag + '"]').click();
+              tooltip.style.display = 'none';
+              lastTarget = null;
+            };
+          });
+
+          // タグ追加
+          tooltip.querySelector('.tooltip-tag-add-btn').onclick = function(ev) {
+            ev.stopPropagation();
+            const input = tooltip.querySelector('.tooltip-tag-input');
+            const newTag = input.value.trim();
+            if (newTag && !tags.includes(newTag)) {
+              tags.push(newTag);
+              span.setAttribute('data-tags', JSON.stringify(tags));
+              input.value = '';
+              span.click();
+            }
+          };
+          // タグ削除
+          tooltip.querySelectorAll('.tooltip-tag-remove').forEach(function(btn) {
+            btn.onclick = function(ev) {
+              ev.stopPropagation();
+              const idx = parseInt(btn.getAttribute('data-idx'));
+              tags.splice(idx, 1);
+              span.setAttribute('data-tags', JSON.stringify(tags));
+              span.click();
+            };
+          });
+        });
+      });
+
+      // ポップアップ自体での操作で消えないように
+      tooltip.addEventListener('mousedown', function(ev) { ev.stopPropagation(); });
+      tooltip.addEventListener('click', function(ev) { ev.stopPropagation(); });
+
+      // どこかクリックでポップアップ閉じる（ただしポップアップ上は除外）
+      document.addEventListener('mousedown', function(e) {
+        if (!tooltipHover) {
+          tooltip.style.display = 'none';
+          lastTarget = null;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ワ行の作品比較</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f9f9f9; }
+    table { width: 100%; border-collapse: collapse; background: #fff; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
+    th { background-color: #e0e0e0; }
+    tr:nth-child(even) { background-color: #f2f2f2; }
+    .no-link { color: gray; }
+    .custom-tooltip {
+      display: none;
+      position: absolute;
+      background: #fffbe7;
+      color: #333;
+      border: 1px solid #ffd700;
+      border-radius: 6px;
+      padding: 8px 16px;
+      font-size: 1em;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      pointer-events: auto;
+      white-space: nowrap;
+      min-width: 200px;
+    }
+    .tooltip-tag {
+      display: inline-block;
+      background: #ffd700;
+      color: #333;
+      border-radius: 4px;
+      padding: 2px 10px;
+      margin: 2px 4px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .tooltip-tag-remove {
+      color: #f00;
+      margin-left: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .tooltip-tag-input {
+      margin-top: 8px;
+      width: 120px;
+      font-size: 1em;
+      padding: 2px 6px;
+    }
+    .tooltip-tag-add-btn {
+      margin-left: 4px;
+      padding: 2px 8px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .filter-bar {
+      margin-bottom: 16px;
+    }
+    .filter-btn {
+      display: inline-block;
+      background: #ffd700;
+      color: #333;
+      border-radius: 4px;
+      padding: 4px 14px;
+      margin-right: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      transition: background 0.2s;
+    }
+    .filter-btn.active {
+      background: #ff9800;
+      color: #fff;
+    }
+    .filter-btn.reset {
+      background: #e0e0e0;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>📺 ワ行の作品比較</h1>
+  <div class="filter-bar">
+    <button class="filter-btn" data-filter="わ">わ</button>
+    <button class="filter-btn" data-filter="を">を</button>
+    <button class="filter-btn" data-filter="ん">ん</button>
+    <button class="filter-btn reset" data-filter="all">すべて表示</button>
+  </div>
+  <table>
+    <tr>
+      <th>配信あり：◎</th>
+      <th>配信なし：✖</th>
+    </tr>
+  </table>
+  <table>
+    <thead>
+      <tr>
+        <th>作品タイトル</th>
+        <th>dアニメストア</th>
+        <th>DMM TV</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ONE OUTS</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21679" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ONE PIECE FAN LETTER</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27402" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ONE PIECE FILM RED</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=26987" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ONE～輝く季節へ～</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=11014" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">OVA「WILD ADAPTER」</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25239" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">One Room</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21361" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">One Room サードシーズン</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24741" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">One Room セカンドシーズン</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22271" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">W3</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=11454" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">WORKING!!</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=10876" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">WORKING!!!</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20222" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">WORKING’!!</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=11582" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">WWW.WORKING!!</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21164" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">「笑ゥせぇるすまん」THE STAGE</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=26071" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">『ワンパンマン』第2期</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22674" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">『咲う アルスノトリア すんっ！』</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25649" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">わかば＊ガール</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20229" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">わが青春のアルカディア</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=10947" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">わしも ＷＡＳＩＭＯ(第1シリーズ）</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23850" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">わしも ＷＡＳＩＭＯ(第2シリーズ）</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23851" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">わしも ＷＡＳＩＭＯ(第3シリーズ）</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23852" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">わしも ＷＡＳＩＭＯ(第4シリーズ）</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23853" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">わしも ＷＡＳＩＭＯ(第5シリーズ）</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23854" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">わしも ＷＡＳＩＭＯ(第6シリーズ）</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23855" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">わすれなぐも</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=11587" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">わたしが恋人になれるわけないじゃん、ムリムリ!（※ムリじゃなかった!?）</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=28107" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">わたしの幸せな結婚</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=26472" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">わたしの幸せな結婚　第二期</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27621" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">わたしの幸せな結婚　第十三話</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27485" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">わんぱく探偵団</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27985" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワイルド7 another 謀略運河</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=10284" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワカコ酒</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20233" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワガママハイスペック</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20893" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワッチャプリマジ！</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25106" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワルキューレロマンツェ</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=11021" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンダーエッグ・プライオリティ</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24424" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンダービートスクランブル</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27984" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンパンマン</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22640" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース CP9編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22930" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース TVオリジナル編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22916" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース TVオリジナル編（2）</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22932" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース さよならメリー号編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22931" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース アラバスタ編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20614" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース インペルダウン編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24126" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース イーストブルー編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20516" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース ウォーターセブン編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22919" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース エッグヘッド編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=26859" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース エニエス・ロビー編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22920" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース グランドライン突入編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20604" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース シャボンディ諸島編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24124" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース シルバーマイン編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24131" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース スリラーバーク編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24123" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース ゾウ編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24132" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース チョッパー登場・冬島編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20605" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース ドレスローザ編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24130" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース パンクハザード編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24129" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース フォクシー海賊団編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22923" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース ホールケーキアイランド編（783話～835話）</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24146" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース ホールケーキアイランド編（836話～891話）</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25151" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース マリンフォード編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24127" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース ワノ国編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25152" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース 女ヶ島編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24125" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース 海軍要塞編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22918" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース 空島・スカイピア編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22917" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース 空島・黄金の鐘編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22922" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース 第406～407話</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24145" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース 第575～578話</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25153" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース 第590話</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25154" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンピース 魚人島編</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24128" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンルーム、日当たり普通、天使つき。</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27033" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワンワン三銃士</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23534" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワールドウィッチーズ発進しますっ！</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24409" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワールドダイスター</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=26258" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワールドトリガー</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21238" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワールドトリガー 2ndシーズン</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24461" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワールドトリガー 3rdシーズン</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25098" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワールドフールニュース</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=11419" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワールドフールニュース PART Ⅱ</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21892" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワールドフールニュース　YouTube版</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23955" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ワールド・デストラクション ～世界撲滅の六人～</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=11102" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">惑星大怪獣ネガドン</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=10179" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">我が家のお稲荷さま。</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=10343" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">私、能力は平均値でって言ったよね！</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24417" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">私がモテてどうすんだ</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21180" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">私がモテないのはどう考えてもお前らが悪い！</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20914" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">私に天使が舞い降りた！</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22572" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">私に天使が舞い降りた！プレシャス・フレンズ</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27195" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">私のあしながおじさん</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20248" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">私の推しは悪役令嬢。</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=26571" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">笑ゥせぇるすまん（89～93年）【デジタルリマスター版】</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=21482" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">綿の国星</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27250" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">若おかみは小学生！</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=22485" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">若おかみは小学生！（劇場版）</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23939" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">若草のシャルロット</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=24061" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="わ" data-tags="[]" style="cursor:pointer;text-decoration:underline;">若草物語　ナンとジョー先生</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=20251" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+<tr><td><span class="title-span" data-tag="ん" data-tags="[]" style="cursor:pointer;text-decoration:underline;">ンめねこ</span></td><td><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=27900" target="_blank">◎</a></td><td><span class="no-link">✖</span></td></tr>
+
+    </tbody>
+  </table>
+  <a href="index.html">トップページに戻る</a>
+  <div id="custom-tooltip" class="custom-tooltip"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // フィルタ機能
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      filterBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          if(btn.dataset.filter !== "all") btn.classList.add('active');
+          const filter = btn.getAttribute('data-filter');
+          document.querySelectorAll('tbody tr').forEach(function(row) {
+            const titleSpan = row.querySelector('.title-span[data-tag]');
+            if (!titleSpan) return;
+            const tag = titleSpan.getAttribute('data-tag');
+            if (filter === 'all' || tag === filter) {
+              row.style.display = '';
+            } else {
+              row.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // ポップアップの表示・非表示制御用フラグ
+      let tooltipHover = false;
+
+      // タイトルクリックでポップアップ
+      const tooltip = document.getElementById('custom-tooltip');
+      let lastTarget = null;
+      document.querySelectorAll('td > span[data-tag].title-span').forEach(function(span) {
+        span.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const tag = span.getAttribute('data-tag');
+          let tags = [];
+          try {
+            tags = JSON.parse(span.getAttribute('data-tags') || '[]');
+          } catch { tags = []; }
+          if (lastTarget === span && tooltip.style.display === 'block') {
+            tooltip.style.display = 'none';
+            lastTarget = null;
+            return;
+          }
+          // 固定タグ（五十音）と追加タグを分けて表示
+          let tagsHtml = '<span class="tooltip-tag" data-fixed="1" data-tag="' + tag + '">' + tag + '</span>';
+          tagsHtml += tags.map(function(t, idx) {
+            return '<span class="tooltip-tag">' + t +
+              '<span class="tooltip-tag-remove" data-idx="' + idx + '">×</span></span>';
+          }).join('');
+          tagsHtml += '<div><input class="tooltip-tag-input" type="text" placeholder="タグを追加">' +
+                      '<button class="tooltip-tag-add-btn">追加</button></div>';
+          tooltip.innerHTML = tagsHtml;
+          const rect = span.getBoundingClientRect();
+          tooltip.style.left = (window.scrollX + rect.left) + 'px';
+          tooltip.style.top = (window.scrollY + rect.bottom + 4) + 'px';
+          tooltip.style.display = 'block';
+          lastTarget = span;
+
+          // 入力欄やポップアップ上での操作で消えないように
+          tooltip.onmouseenter = function() { tooltipHover = true; };
+          tooltip.onmouseleave = function() { tooltipHover = false; setTimeout(function(){
+            if(!tooltipHover) { tooltip.style.display = 'none'; lastTarget = null; }
+          }, 100); };
+          // 入力欄でのクリック・入力時も消えないように
+          const input = tooltip.querySelector('.tooltip-tag-input');
+          if (input) {
+            input.addEventListener('mousedown', function(ev) { ev.stopPropagation(); });
+            input.addEventListener('click', function(ev) { ev.stopPropagation(); });
+            input.addEventListener('keydown', function(ev) { ev.stopPropagation(); });
+          }
+
+          // 固定タグクリックでフィルタ
+          tooltip.querySelectorAll('.tooltip-tag[data-fixed="1"]').forEach(function(btn) {
+            btn.onclick = function(ev) {
+              ev.stopPropagation();
+              const tag = btn.getAttribute('data-tag');
+              document.querySelector('.filter-btn[data-filter="' + tag + '"]').click();
+              tooltip.style.display = 'none';
+              lastTarget = null;
+            };
+          });
+
+          // タグ追加
+          tooltip.querySelector('.tooltip-tag-add-btn').onclick = function(ev) {
+            ev.stopPropagation();
+            const input = tooltip.querySelector('.tooltip-tag-input');
+            const newTag = input.value.trim();
+            if (newTag && !tags.includes(newTag)) {
+              tags.push(newTag);
+              span.setAttribute('data-tags', JSON.stringify(tags));
+              input.value = '';
+              span.click();
+            }
+          };
+          // タグ削除
+          tooltip.querySelectorAll('.tooltip-tag-remove').forEach(function(btn) {
+            btn.onclick = function(ev) {
+              ev.stopPropagation();
+              const idx = parseInt(btn.getAttribute('data-idx'));
+              tags.splice(idx, 1);
+              span.setAttribute('data-tags', JSON.stringify(tags));
+              span.click();
+            };
+          });
+        });
+      });
+
+      // ポップアップ自体での操作で消えないように
+      tooltip.addEventListener('mousedown', function(ev) { ev.stopPropagation(); });
+      tooltip.addEventListener('click', function(ev) { ev.stopPropagation(); });
+
+      // どこかクリックでポップアップ閉じる（ただしポップアップ上は除外）
+      document.addEventListener('mousedown', function(e) {
+        if (!tooltipHover) {
+          tooltip.style.display = 'none';
+          lastTarget = null;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
