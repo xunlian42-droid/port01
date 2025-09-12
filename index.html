@@ -96,111 +96,112 @@
     <li><a href="019_ra_gyo_comparison.html">ラ行の作品比較</a></li>
     <li><a href="020_wa_gyo_comparison.html">ワ行の作品比較</a></li>
   </ul>
-  <script>
-    // 各比較ページの作品タイトルを取得する
-    const pageList = [
-      { href: "011_a_gyo_comparison.html" },
-      { href: "012_ka_gyo_comparison.html" },
-      { href: "013_sa_gyo_comparison.html" },
-      { href: "014_ta_gyo_comparison.html" },
-      { href: "015_na_gyo_comparison.html" },
-      { href: "016_ha_gyo_comparison.html" },
-      { href: "017_ma_gyo_comparison.html" },
-      { href: "018_ya_gyo_comparison.html" },
-      { href: "019_ra_gyo_comparison.html" },
-      { href: "020_wa_gyo_comparison.html" }
-    ];
+  
+<script>
+const pageList = [
+  { href: "011_a_gyo_comparison.html" },
+  { href: "012_ka_gyo_comparison.html" },
+  { href: "013_sa_gyo_comparison.html" },
+  { href: "014_ta_gyo_comparison.html" },
+  { href: "015_na_gyo_comparison.html" },
+  { href: "016_ha_gyo_comparison.html" },
+  { href: "017_ma_gyo_comparison.html" },
+  { href: "018_ya_gyo_comparison.html" },
+  { href: "019_ra_gyo_comparison.html" },
+  { href: "020_wa_gyo_comparison.html" }
+];
 
-    // 作品タイトルのインデックスを作成
-    let titleIndex = []; // {title, page, anchor}
+// 検索対象データ（作品ごとの行HTML）
+let titleIndex = []; // { title, page, rowHTML }
 
-    // 各比較ページからタイトルを取得
-    async function buildTitleIndex() {
-      titleIndex = [];
-      for (const page of pageList) {
-        try {
-          const res = await fetch(page.href);
-          if (!res.ok) continue;
-          const html = await res.text();
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(html, "text/html");
-          // 作品タイトルは1列目のtd（またはtr>td）に入っている想定
-          doc.querySelectorAll("tbody tr").forEach(tr => {
-            const td = tr.querySelector("td");
-            if (td) {
-              // タグやspanを除去してテキストのみ取得
-              let title = td.textContent.trim();
-              // 作品タイトルが空でなければ
-              if (title) {
-                titleIndex.push({
-                  title: title,
-                  page: page.href
-                });
-              }
-            }
-          });
-        } catch (e) {
-          // ページが見つからない場合などは無視
+async function buildTitleIndex() {
+  titleIndex = [];
+  for (const page of pageList) {
+    try {
+      const res = await fetch(page.href);
+      if (!res.ok) continue;
+      const html = await res.text();
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, "text/html");
+
+      // 各作品行（tr）を取得
+      doc.querySelectorAll("tbody tr").forEach(tr => {
+        const td = tr.querySelector("td");
+        if (td) {
+          const title = td.textContent.trim();
+          if (title) {
+            titleIndex.push({
+              title: title,
+              page: page.href,
+              rowHTML: tr.outerHTML // 行全体を保存
+            });
+          }
         }
-      }
-    }
-
-    // 検索実行
-    async function doSearch() {
-      const query = document.getElementById('search-input').value.trim();
-      const exclude = document.getElementById('exclude-input').value.trim();
-      const words = query ? query.split(/\s+/) : [];
-      const excludes = exclude ? exclude.split(/\s+/) : [];
-
-      // インデックスがなければ構築
-      if (titleIndex.length === 0) {
-        document.getElementById('result-count').textContent = "検索中...";
-        await buildTitleIndex();
-      }
-
-      // 検索
-      const results = titleIndex.filter(item => {
-        // AND検索
-        const match = words.every(w => item.title.includes(w));
-        // 除外語
-        const notExcluded = excludes.every(w => !item.title.includes(w));
-        return match && notExcluded;
       });
-
-      // 結果表示
-      const ul = document.getElementById('result-list');
-      ul.innerHTML = '';
-      results.forEach(item => {
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        a.href = item.page;
-        a.textContent = item.title;
-        li.appendChild(a);
-        ul.appendChild(li);
-      });
-      document.getElementById('result-count').textContent = results.length + "件ヒット";
+    } catch (e) {
+      console.warn("読み込み失敗:", page.href);
     }
+  }
+}
 
-    document.getElementById('search-form').addEventListener('submit', doSearch);
-    document.getElementById('reset-btn').addEventListener('click', function() {
-      document.getElementById('search-input').value = '';
-      document.getElementById('exclude-input').value = '';
-      document.getElementById('result-count').textContent = '';
-      // デフォルトのリストに戻す
-      const ul = document.getElementById('result-list');
-      ul.innerHTML = `
-        <li><a href="011_a_gyo_comparison.html">ア行の作品比較</a></li>
-        <li><a href="012_ka_gyo_comparison.html">カ行の作品比較</a></li>
-        <li><a href="013_sa_gyo_comparison.html">サ行の作品比較</a></li>
-        <li><a href="014_ta_gyo_comparison.html">タ行の作品比較</a></li>
-        <li><a href="015_na_gyo_comparison.html">ナ行の作品比較</a></li>
-        <li><a href="016_ha_gyo_comparison.html">ハ行の作品比較</a></li>
-        <li><a href="017_ma_gyo_comparison.html">マ行の作品比較</a></li>
-        <li><a href="018_ya_gyo_comparison.html">ヤ行の作品比較</a></li>
-        <li><a href="019_ra_gyo_comparison.html">ラ行の作品比較</a></li>
-        <li><a href="020_wa_gyo_comparison.html">ワ行の作品比較</a></li>
-      `;
-    });
+async function doSearch() {
+  const query = document.getElementById('search-input').value.trim();
+  const exclude = document.getElementById('exclude-input').value.trim();
+  const words = query ? query.split(/\s+/) : [];
+  const excludes = exclude ? exclude.split(/\s+/) : [];
+
+  if (titleIndex.length === 0) {
+    document.getElementById('result-count').textContent = "検索中...";
+    await buildTitleIndex();
+  }
+
+  const results = titleIndex.filter(item => {
+    const match = words.every(w => item.title.includes(w));
+    const notExcluded = excludes.every(w => !item.title.includes(w));
+    return match && notExcluded;
+  });
+
+  // 表形式で結果を表示
+  const resultTable = document.getElementById('search-result-table');
+  const tbody = resultTable.querySelector('tbody');
+  tbody.innerHTML = ''; // クリア
+
+  results.forEach(item => {
+    const parser = new DOMParser();
+    const rowDoc = parser.parseFromString(item.rowHTML, "text/html");
+    const tr = rowDoc.body.firstChild;
+    tbody.appendChild(tr);
+  });
+
+  document.getElementById('result-count').textContent = results.length + "件ヒット";
+}
+
+// 検索イベント
+document.getElementById('search-form').addEventListener('submit', doSearch);
+
+// リセット処理
+document.getElementById('reset-btn').addEventListener('click', function () {
+  document.getElementById('search-input').value = '';
+  document.getElementById('exclude-input').value = '';
+  document.getElementById('result-count').textContent = '';
+  document.querySelector('#search-result-table tbody').innerHTML = '';
+
+
+  // 初期リンク一覧に戻す
+  const ul = document.getElementById('result-list');
+  ul.innerHTML = `
+    <li><a href="011_a_gyo_comparison.html">ア行の作品比較</a></li>
+    <li><a href="012_ka_gyo_comparison.html">カ行の作品比較</a></li>
+    <li><a href="013_sa_gyo_comparison.html">サ行の作品比較</a></li>
+    <li><a href="014_ta_gyo_comparison.html">タ行の作品比較</a></li>
+    <li><a href="015_na_gyo_comparison.html">ナ行の作品比較</a></li>
+    <li><a href="016_ha_gyo_comparison.html">ハ行の作品比較</a></li>
+    <li><a href="017_ma_gyo_comparison.html">マ行の作品比較</a></li>
+    <li><a href="018_ya_gyo_comparison.html">ヤ行の作品比較</a></li>
+    <li><a href="019_ra_gyo_comparison.html">ラ行の作品比較</a></li>
+    <li><a href="020_wa_gyo_comparison.html">ワ行の作品比較</a></li>
+  `;
+});
   </script>
 </body>
 </html>
