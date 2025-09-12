@@ -111,8 +111,14 @@ const pageList = [
   { href: "020_wa_gyo_comparison.html" }
 ];
 
-// 検索対象データ（作品ごとの行HTML）
-let titleIndex = []; // { title, page, rowHTML }
+let titleIndex = [];
+
+function generateAnchorId(title) {
+  // 記号や長音符（ー）なども含めてIDを生成
+  return title
+    .replace(/[^\p{L}\p{N}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}ー☆★・]/gu, '')
+    .slice(0, 30);
+}
 
 async function buildTitleIndex() {
   titleIndex = [];
@@ -124,16 +130,16 @@ async function buildTitleIndex() {
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, "text/html");
 
-      // 各作品行（tr）を取得
       doc.querySelectorAll("tbody tr").forEach(tr => {
         const td = tr.querySelector("td");
         if (td) {
           const title = td.textContent.trim();
           if (title) {
+            const anchor = generateAnchorId(title);
             titleIndex.push({
               title: title,
               page: page.href,
-              rowHTML: tr.outerHTML // 行全体を保存
+              anchor: anchor
             });
           }
         }
@@ -161,33 +167,26 @@ async function doSearch() {
     return match && notExcluded;
   });
 
-  // 表形式で結果を表示
-  const resultTable = document.getElementById('search-result-table');
-  const tbody = resultTable.querySelector('tbody');
-  tbody.innerHTML = ''; // クリア
-
+  const ul = document.getElementById('result-list');
+  ul.innerHTML = '';
   results.forEach(item => {
-    const parser = new DOMParser();
-    const rowDoc = parser.parseFromString(item.rowHTML, "text/html");
-    const tr = rowDoc.body.firstChild;
-    tbody.appendChild(tr);
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = `${item.page}#${item.anchor}`; // ページ＋アンカーでジャンプ
+    a.textContent = item.title;
+    li.appendChild(a);
+    ul.appendChild(li);
   });
 
-  document.getElementById('result-count').textContent = results.length + "件ヒット";
+  document.getElementById('result-count').textContent = `${results.length}件ヒット`;
 }
 
-// 検索イベント
 document.getElementById('search-form').addEventListener('submit', doSearch);
 
-// リセット処理
 document.getElementById('reset-btn').addEventListener('click', function () {
   document.getElementById('search-input').value = '';
   document.getElementById('exclude-input').value = '';
   document.getElementById('result-count').textContent = '';
-  document.querySelector('#search-result-table tbody').innerHTML = '';
-
-
-  // 初期リンク一覧に戻す
   const ul = document.getElementById('result-list');
   ul.innerHTML = `
     <li><a href="011_a_gyo_comparison.html">ア行の作品比較</a></li>
@@ -202,6 +201,6 @@ document.getElementById('reset-btn').addEventListener('click', function () {
     <li><a href="020_wa_gyo_comparison.html">ワ行の作品比較</a></li>
   `;
 });
-  </script>
+</script>
 </body>
 </html>
