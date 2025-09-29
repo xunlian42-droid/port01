@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>アニメ配信比較サイト</title>
+  <link rel="stylesheet" href="index_style.css">
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <h1>作品配信比較</h1>
+  <!-- 検索フォーム -->
+  <form class="search-bar" id="search-form" onsubmit="return false;">
+    <input type="text" id="search-input" placeholder="検索語（スペース区切りでAND検索）">
+    <input type="text" id="exclude-input" placeholder="除外語（スペース区切り）">
+    <button type="submit">検索</button>
+    <button type="button" id="reset-btn">リセット</button>
+  </form>
+  <div class="result-count" id="result-count"></div>
+  <ul id="result-list">
+    <li><a href="comparison_gojuon_with_links/comparison_01_a_with_links.html">ア行の作品比較</a></li>
+    <li><a href="comparison_gojuon_with_links/comparison_02_ka_with_links.html">カ行の作品比較</a></li>
+    <li><a href="comparison_gojuon_with_links/comparison_03_sa_with_links.html">サ行の作品比較</a></li>
+    <li><a href="comparison_gojuon_with_links/comparison_04_ta_with_links.html">タ行の作品比較</a></li>
+    <li><a href="comparison_gojuon_with_links/comparison_05_na_with_links.html">ナ行の作品比較</a></li>
+    <li><a href="comparison_gojuon_with_links/comparison_06_ha_with_links.html">ハ行の作品比較</a></li>
+    <li><a href="comparison_gojuon_with_links/comparison_07_ma_with_links.html">マ行の作品比較</a></li>
+    <li><a href="comparison_gojuon_with_links/comparison_08_ya_with_links.html">ヤ行の作品比較</a></li>
+    <li><a href="comparison_gojuon_with_links/comparison_09_ra_with_links.html">ラ行の作品比較</a></li>
+    <li><a href="comparison_gojuon_with_links/comparison_10_wa_with_links.html">ワ行の作品比較</a></li>
+  </ul>
+
+  <script>
+    const pageList = [
+      { href: "comparison_gojuon_with_links/comparison_01_a_with_links.html" },
+      { href: "comparison_gojuon_with_links/comparison_02_ka_with_links.html" },
+      { href: "comparison_gojuon_with_links/comparison_03_sa_with_links.html" },
+      { href: "comparison_gojuon_with_links/comparison_04_ta_with_links.html" },
+      { href: "comparison_gojuon_with_links/comparison_05_na_with_links.html" },
+      { href: "comparison_gojuon_with_links/comparison_06_ha_with_links.html" },
+      { href: "comparison_gojuon_with_links/comparison_07_ma_with_links.html" },
+      { href: "comparison_gojuon_with_links/comparison_08_ya_with_links.html" },
+      { href: "comparison_gojuon_with_links/comparison_09_ra_with_links.html" },
+      { href: "comparison_gojuon_with_links/comparison_10_wa_with_links.html" }
+    ];
+
+    let titleIndex = [];
+
+    function generateAnchorId(title) {
+      // 記号や長音符（ー）なども含めてIDを生成
+      return title
+        .replace(/[^\p{L}\p{N}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}ー☆★・]/gu, '')
+        .slice(0, 30);
+    }
+
+    async function buildTitleIndex() {
+      titleIndex = [];
+      for (const page of pageList) {
+        try {
+          const res = await fetch(page.href);
+          if (!res.ok) continue;
+          const html = await res.text();
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, "text/html");
+
+          // タイトルリンクだけを対象にする
+          doc.querySelectorAll("tbody tr td").forEach(tr => {
+            const title = tr.textContent.trim();
+            if (title) {
+              const anchor = generateAnchorId(title);
+              titleIndex.push({
+                title: title,
+                page: page.href,
+                anchor: anchor,
+                id: tr.dataset.id || null
+              });
+            }
+          });
+        } catch (e) {
+          console.warn("読み込み失敗:", page.href);
+        }
+      }
+    }
+
+    async function doSearch() {
+      const query = document.getElementById('search-input').value.trim();
+      const exclude = document.getElementById('exclude-input').value.trim();
+      const words = query ? query.split(/\s+/) : [];
+      const excludes = exclude ? exclude.split(/\s+/) : [];
+
+      if (titleIndex.length === 0) {
+        document.getElementById('result-count').textContent = "検索中...";
+        await buildTitleIndex();
+      }
+
+      const results = titleIndex.filter(item => {
+        const match = words.every(w => item.title.includes(w));
+        const notExcluded = excludes.every(w => !item.title.includes(w));
+        return match && notExcluded;
+      });
+
+      const ul = document.getElementById('result-list');
+      ul.innerHTML = '';
+      results.forEach(item => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = `${item.page}#${item.anchor}`; // ページ＋アンカーでジャンプ
+        a.textContent = item.title;
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+
+      document.getElementById('result-count').textContent = `${results.length}件ヒット`;
+    }
+
+    document.getElementById('search-form').addEventListener('submit', doSearch);
+
+    document.getElementById('reset-btn').addEventListener('click', function () {
+      document.getElementById('search-input').value = '';
+      document.getElementById('exclude-input').value = '';
+      document.getElementById('result-count').textContent = '';
+      const ul = document.getElementById('result-list');
+      ul.innerHTML = `
+    <li><a href="comparison_gojuon_with_links/comparison_01_a_with_links.html">ア行の作品比較</a></li>
+    <li><a href="comparison_gojuon_with_links/comparison_02_ka_with_links.html">カ行の作品比較</a></li>
+    <li><a href="comparison_gojuon_with_links/comparison_03_sa_with_links.html">サ行の作品比較</a></li>
+    <li><a href="comparison_gojuon_with_links/comparison_04_ta_with_links.html">タ行の作品比較</a></li>
+    <li><a href="comparison_gojuon_with_links/comparison_05_na_with_links.html">ナ行の作品比較</a></li>
+    <li><a href="comparison_gojuon_with_links/comparison_06_ha_with_links.html">ハ行の作品比較</a></li>
+    <li><a href="comparison_gojuon_with_links/comparison_07_ma_with_links.html">マ行の作品比較</a></li>
+    <li><a href="comparison_gojuon_with_links/comparison_08_ya_with_links.html">ヤ行の作品比較</a></li>
+    <li><a href="comparison_gojuon_with_links/comparison_09_ra_with_links.html">ラ行の作品比較</a></li>
+    <li><a href="comparison_gojuon_with_links/comparison_10_wa_with_links.html">ワ行の作品比較</a></li>
+  `;
+    });
+  </script>
+</body>
+
+</html>
