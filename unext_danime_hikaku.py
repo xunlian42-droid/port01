@@ -4,7 +4,7 @@ import unicodedata
 from difflib import SequenceMatcher
 import html
 
-# — 正規化 & 類似度判定 — #
+# 正規化 & 類似度判定
 
 def normalize(text: str) -> str:
     text = unicodedata.normalize('NFKC', text)
@@ -16,7 +16,7 @@ def normalize(text: str) -> str:
 def similar(a: str, b: str, threshold: float = 0.8) -> bool:
     return SequenceMatcher(None, normalize(a), normalize(b)).ratio() >= threshold
 
-# — データ読み込み & マッチング — #
+# データ読み込み & マッチング
 
 def build_groups(*unext_paths, danime_path, threshold=0.8):
     # U-NEXTデータを統合
@@ -74,7 +74,7 @@ def build_groups(*unext_paths, danime_path, threshold=0.8):
     groups.sort(key=lambda g: normalize(g['title']))
     return groups
 
-# — HTML生成 — #
+# HTML生成
 
 def render_html(groups, output_path):
     html_template = """<!DOCTYPE html>
@@ -120,7 +120,7 @@ def render_html(groups, output_path):
         f.write(html_content)
     print(f"HTML出力完了 → {output_path}")
 
-# — メイン処理 — #
+# — メイン処理
 if __name__ == '__main__':
     groups = build_groups(
         'unext_extraction/unext_titles_part_027.json',

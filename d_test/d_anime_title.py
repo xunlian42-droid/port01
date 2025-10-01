@@ -10,7 +10,7 @@ import time
 driver_path = os.environ.get("CHROMEDRIVER_PATH", "/usr/local/bin/chromedriver")
 service = Service(driver_path)
 options = webdriver.ChromeOptions()
-options.add_argument("--window-size=1200,3000")  # ← 追加
+options.add_argument("--window-size=1200,3000")  
 # options.add_argument("--headless")
 driver = webdriver.Chrome(options=options)
 
@@ -54,7 +54,7 @@ for data_value, kana in kana_map.items():
         print(f"{kana}行 tab class: {tab.get_attribute('class')}")
         time.sleep(5)  # タブ切り替え待機
 
-        # ★ listContainerを少しずつスクロールして全件読み込む
+        # listContainerを少しずつスクロールして全件読み込む
         scroll_target = driver.find_element(By.CSS_SELECTOR, "div#listContainer")
         last_count = 0
         same_count = 0
@@ -80,7 +80,7 @@ for data_value, kana in kana_map.items():
                 title_span = el.find_element(By.CSS_SELECTOR, "span.ui-clamp.webkit2LineClamp")
                 title = title_span.text.strip()
                 link = el.get_attribute("href")
-                # ★条件を削除し、全て追加
+                # 条件を削除し、全て追加
                 groups[kana].append((title, link))
             except Exception as e:
                 print(f"タイトルの抽出に失敗しました: {e}")

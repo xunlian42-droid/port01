@@ -26,7 +26,7 @@ def process_tag_file(input_path, output_path):
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(str(soup))
 
-# 他の行も処理したい場合はループで回せます
+# 他の行も処理したい場合はループ
 
 for path in glob.glob("tags_html_folder/*_tags.html"):
     output = path.replace("_tags.html", "_tags_processed.html")

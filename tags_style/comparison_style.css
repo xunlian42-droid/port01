@@ -10,7 +10,7 @@ body {
     margin: auto;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
-    /* ★ ここを変更 ★ */
+    
     border-collapse: separate;
     /* セパレートモードに */
     border-spacing: 0;

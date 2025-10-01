@@ -2,7 +2,7 @@
   let tagDoc = null;
   const tagIndex = {};
 
-  // 初回ロードで ka_tags.html をフェッチして DOM にパース
+  // 初回ロード
   async function loadTagDoc() {
     if (tagDoc) return tagDoc;
     const res = await fetch("tags_html_folder");

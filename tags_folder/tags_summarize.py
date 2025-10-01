@@ -47,7 +47,7 @@ def parse_staff(staff_str: str) -> list[tuple[str,str]]:
     if not staff_str:
         return []
 
-    # 1) セクションを括弧外の "／" で分割
+    # セクションを括弧外の "／" で分割
     sections = split_outside(staff_str, ("／",))
     results = []
 
@@ -56,13 +56,13 @@ def parse_staff(staff_str: str) -> list[tuple[str,str]]:
             continue
         role_part, name_part = sec.split(":", 1)
 
-        # 2) 役職部分を括弧外の "・" で分割
+        # 役職部分を括弧外の "・" で分割
         roles = [r.strip() for r in split_outside(role_part, ("・",)) if r.strip()]
 
-        # 3) 担当者部分を括弧外の "・", "、", "," で分割
+        # 担当者部分を括弧外の "・", "、", "," で分割
         names = [n.strip() for n in split_outside(name_part, ("・","、",",")) if n.strip()]
 
-        # 4) 全組み合わせを結果に追加
+        # 全組み合わせを結果に追加
         for r in roles:
             for n in names:
                 results.append((r, n))
@@ -107,7 +107,7 @@ def main():
     with open(OUTPUT_HTML, "w", encoding="utf-8") as f:
         f.write("\n".join(blocks))
 
-    print(f"✅ {OUTPUT_HTML} を生成しました")
+    print(f" {OUTPUT_HTML} を生成しました")
 
 if __name__ == "__main__":
     main()
