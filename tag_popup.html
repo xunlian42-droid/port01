@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>タグ一覧</title>
+  <style>
+    ul { list-style: none; padding-left: 0; }
+    li { margin-bottom: 0.5em; }
+    a { text-decoration: none; color: blue; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <h2>タグ一覧</h2>
+  <ul id="tag-list"></ul>
+
+  <script>
+    const tagIndex = {}; // { "役職:名前": [ { id, title, rowKey } ] }
+
+    async function buildTagIndex() {
+      const res = await fetch("tags_html_folder/all_tags_combined.html");
+      const html = await res.text();
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, "text/html");
+
+      doc.querySelectorAll("#all-tags > div[id]").forEach(div => {
+        const workId = div.id;
+        const rowKey = div.dataset.row;
+        const title = div.querySelector("h3")?.textContent.trim() || workId;
+
+        div.querySelectorAll("li").forEach(li => {
+          const strong = li.querySelector("strong");
+          if (!strong) return;
+          const role = strong.textContent.replace(/:$/, "");
+          const name = li.textContent.replace(strong.textContent, "").trim();
+          const key = `${role}:${name}`;
+          (tagIndex[key] = tagIndex[key] || []).push({ id: workId, title, rowKey });
+        });
+      });
+    }
+
+    function renderTagList() {
+      const ul = document.getElementById("tag-list");
+      ul.innerHTML = "";
+      Object.keys(tagIndex).sort().forEach(tagKey => {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = "#";
+        a.textContent = tagKey;
+        a.addEventListener("click", e => {
+          e.preventDefault();
+          const entries = tagIndex[tagKey];
+          if (window.opener && !window.opener.closed) {
+            window.opener.showTagResults(tagKey, entries);
+            window.close();
+          }
+        });
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", async () => {
+      await buildTagIndex();
+      renderTagList();
+    });
+  </script>
+</body>
+</html>

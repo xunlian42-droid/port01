@@ -2045,7 +2045,7 @@
         <td style="text-align:center;"><a href="https://video.unext.jp/title/SID0045458" target="_blank">◎</a></td>
       </tr>
       <tr id="アイカツフレンズ__2ndシーズン_">
-        <td><a class="title-link" data-id="アイカツフレンズ__2ndシーズン_">アイカツフレンズ！(2ndシーズン）</a></td>
+        <td><a class="title-link" data-id="アイカツフレンズ__2ndシーズン_">アイカツフレンズ！（2ndシーズン）</a></td>
         <td style="text-align:center;"><a href="https://animestore.docomo.ne.jp/animestore/ci_pc?workId=23873"
             target="_blank">◎</a></td>
         <td style="text-align:center;"><a href="https://video.unext.jp/title/SID0040224" target="_blank">◎</a></td>
@@ -8832,6 +8832,21 @@
   </div>
   <script>
     window.rowKey = "a"; // このページは「あ」行
+
+    // index.htmlからジャンプ
+    window.addEventListener("DOMContentLoaded", () => {
+    const id = sessionStorage.getItem("scrollToId");
+    if (!id) return;
+
+    const target = document.querySelector(`[data-id="${id}"]`);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "center"});
+      target.classList.add("highlight");
+      setTimeout(() => target.classList.remove("highlight"), 1000);
+    }
+
+    sessionStorage.removeItem("scrollToId");
+    });
   </script>
   <script src="../tags_script/script_a_tag_link.js"></script>
 

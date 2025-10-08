@@ -5,6 +5,10 @@ body {
     color: #333;
 }
 
+h1 {
+    text-align: center;
+}
+
 .mark01 {
     width: 95%;
     margin: auto;
@@ -12,14 +16,11 @@ body {
 
     
     border-collapse: separate;
-    /* セパレートモードに */
     border-spacing: 0;
-    /* セル間の隙間をなくす */
 
     border-radius: 30px;
-    /* 角丸指定 */
     overflow: hidden;
-    /* はみ出しを隠す */
+
 }
 
 .mark02 {
@@ -61,7 +62,7 @@ a.title-link {
 a.title-link::after {
     content: " ";
     margin-left: 6px;
-    font-size: 0.9%;
+    font-size: 0.9rem;
     opacity: 0.6;
 }
 
@@ -136,4 +137,14 @@ a.title-link:hover {
 .custom-tooltip {
     margin: auto;
     padding: 3%;
+}
+
+.highlight {
+  animation: flash 5s ease-out;
+}
+
+@keyframes flash {
+  0%   { background-color: yellow; }
+  50%  { background-color: gold; }
+  100% { background-color: transparent; }
 }

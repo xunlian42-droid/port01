@@ -33,6 +33,27 @@
     <li><a href="comparison_gojuon_with_links/comparison_10_wa_with_links.html">ワ行の作品比較</a></li>
   </ul>
 
+  <!-- タグ検索フォーム -->
+  <form class="tag-search-bar" id="tag-search-form">
+    <label class="tag-search" for="tag-input">タグ検索</label><br>
+    <input type="text" id="tag-input" placeholder="役職:名前を入力"><br><br>
+
+    <input type="text" id="exclude-input" placeholder="除外したい語句"><br><br>
+
+    <button type="submit">検索</button>
+    <button type="button" id="tag-reset-btn">リセット</button>
+  </form>
+
+
+    <button onclick="openTagPopup()">タグ一覧を表示</button>
+    <hr>
+
+    <h3>タグ一覧から検索結果</h3>
+    <p id="tag-result-count"></p>
+    <ul id="tag-result-list"></ul>
+
+  
+
   <script>
     const pageList = [
       { href: "comparison_gojuon_with_links/comparison_01_a_with_links.html" },
@@ -50,10 +71,9 @@
     let titleIndex = [];
 
     function generateAnchorId(title) {
-      // 記号や長音符（ー）なども含めてIDを生成
+      // タイトルからアンカーIDを生成
       return title
-        .replace(/[^\p{L}\p{N}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}ー☆★・]/gu, '')
-        .slice(0, 30);
+        .replace(/[^\p{L}\p{N}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}_]/gu, "_");
     }
 
     async function buildTitleIndex() {
@@ -85,6 +105,7 @@
       }
     }
 
+        // タイトル検索用インデックス
     async function doSearch() {
       const query = document.getElementById('search-input').value.trim();
       const exclude = document.getElementById('exclude-input').value.trim();
@@ -108,6 +129,8 @@
         const li = document.createElement('li');
         const a = document.createElement('a');
         a.href = `${item.page}#${item.anchor}`; // ページ＋アンカーでジャンプ
+        a.addEventListener("click", () => {
+          sessionStorage.setItem("scrollToId", item.anchor);}); // anchor = data-id
         a.textContent = item.title;
         li.appendChild(a);
         ul.appendChild(li);
@@ -115,6 +138,10 @@
 
       document.getElementById('result-count').textContent = `${results.length}件ヒット`;
     }
+
+
+
+
 
     document.getElementById('search-form').addEventListener('submit', doSearch);
 
@@ -136,6 +163,44 @@
     <li><a href="comparison_gojuon_with_links/comparison_10_wa_with_links.html">ワ行の作品比較</a></li>
   `;
     });
+
+    // タグ検索用インデックス
+
+    function openTagPopup() {
+      window.open("tag_popup.html", "tagPopup", "width=600,height=700,scrollbars=yes");
+    }
+    
+    // タグポップアップから呼ばれる関数
+    window.showTagResults = function (tagKey, entries) {
+      const ul = document.getElementById("tag-result-list");
+      ul.innerHTML = "";
+
+      entries.forEach(({ id, title, rowKey }) => {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        const pageHref = `comparison_gojuon_with_links/comparison_${getRowNumber(rowKey)}_${rowKey}_with_links.html`;
+        a.href = `${pageHref}#${id}`;
+        a.textContent = `${title}`;
+        a.addEventListener("click", () => {
+          sessionStorage.setItem("scrollToId", id);
+        });
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+
+      document.getElementById("tag-result-count").textContent = `タグ「${tagKey}」に一致する作品：${entries.length}件`;
+    };
+
+    function getRowNumber(rowKey) {
+      const map = {
+        "a": "01", "ka": "02", "sa": "03", "ta": "04", "na": "05",
+        "ha": "06", "ma": "07", "ya": "08", "ra": "09", "wa": "10"
+      };
+      return map[rowKey] || "00";
+    }
+
+
+
   </script>
 </body>
 

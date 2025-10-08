@@ -12,6 +12,7 @@
     return tagDoc;
   }
 
+
   // tagDoc から「役職:担当者」→作品リストをマップ化
   function buildTagIndex() {
     tagDoc.querySelectorAll("div[id]").forEach(div => {

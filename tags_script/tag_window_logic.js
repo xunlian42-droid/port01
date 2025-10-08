@@ -91,21 +91,21 @@
     }
 
     // 5. 行ジャンプ・検索も container 外でそのまま動作
-    document.querySelectorAll(".gojuon-nav button").forEach(btn => {
-        btn.addEventListener("click", () => {
-            const row = btn.dataset.row;
-            const target = allTags.querySelector(`.row-${row}`);
-            if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
-        });
-    });
+    // document.querySelectorAll(".gojuon-nav button").forEach(btn => {
+    //     btn.addEventListener("click", () => {
+    //         const row = btn.dataset.row;
+    //         const target = allTags.querySelector(`.row-${row}`);
+    //         if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+    //     });
+    // });
 
-    document.getElementById("search-box")?.addEventListener("input", e => {
-        const kw = e.target.value.trim();
-        allTags.querySelectorAll("div[id]").forEach(div => {
-            const t = div.querySelector("h3")?.textContent || "";
-            div.style.display = t.includes(kw) ? "" : "none";
-        });
-    });
+    // document.getElementById("search-box")?.addEventListener("input", e => {
+    //     const kw = e.target.value.trim();
+    //     allTags.querySelectorAll("div[id]").forEach(div => {
+    //         const t = div.querySelector("h3")?.textContent || "";
+    //         div.style.display = t.includes(kw) ? "" : "none";
+    //     });
+    // });
 
     // 6. 初期表示
     showTagsFor(currentId);
