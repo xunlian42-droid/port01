@@ -1760,6 +1760,21 @@
   </div>
   <script>
     window.rowKey = "ya"; // このページは「や」行
+
+        // index.htmlからジャンプ
+    window.addEventListener("DOMContentLoaded", () => {
+    const id = sessionStorage.getItem("scrollToId");
+    if (!id) return;
+
+    const target = document.querySelector(`[data-id="${id}"]`);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "center"});
+      target.classList.add("highlight");
+      setTimeout(() => target.classList.remove("highlight"), 1000);
+    }
+
+    sessionStorage.removeItem("scrollToId");
+    });
   </script>
   <script src="../tags_script/script_ya_tag_link.js"></script>
 </body>
