@@ -140,7 +140,7 @@ a.title-link:hover {
 }
 
 .highlight {
-  animation: flash 5s ease-out;
+  animation: flash 3s ease-out;
 }
 
 @keyframes flash {

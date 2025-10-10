@@ -26,6 +26,8 @@
         const target = document.getElementById(id);
         if (target) {
             target.scrollIntoView({ behavior: "smooth", block: "center" });
+            target.classList.add("highlight");
+            setTimeout(() => target.classList.remove("highlight"), 10000);
         }
     };
 })();
