@@ -1,0 +1,2 @@
+1.index.htmlがトップページ
+2.dani_extractionとunext_extractionのjsonファイルを比較する
